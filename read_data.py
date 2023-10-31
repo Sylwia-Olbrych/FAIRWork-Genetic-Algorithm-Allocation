@@ -1,7 +1,8 @@
 import pandas as pd
 
 # Define the path to your Excel file
-excel_file = "/Users/melodytung/PycharmProjects/FAIRWork-Genetic-Algorithm-Allocation/Workerload Balance Demonstrator Excel_fixed values_static_v4.xlsx"
+#TODO: Add path to your Excel File
+excel_file = ""
 
 # Define the sheet name for "Order details KB"
 sheet_name_order_details = "Order details KB"

@@ -2,7 +2,7 @@ import pandas as pd
 
 # Define the path to your Excel file
 #TODO: Add path to your Excel File
-excel_file = ""
+excel_file = "/Users/melodytung/PycharmProjects/FAIRWork-Genetic-Algorithm-Allocation/src/Workerload Balance Demonstrator Excel_fixed values_static_v4.xlsx"
 
 # Define the sheet name for "Order details KB"
 sheet_name_order_details = "Order details KB"
@@ -21,9 +21,9 @@ required_stevedores = required_stevedores.dropna()
 required_stevedores_data = required_stevedores.values.flatten().tolist()
 n = required_stevedores_data
 
-# Print the required number of stevedores
-print("Required Number of Stevedores:")
-print(required_stevedores_data)
+# # Print the required number of stevedores
+# print("Required Number of Stevedores:")
+# print(required_stevedores_data)
 
 # Define the sheet names for Order 1, Order 2, and Order 3
 sheet_names = ["Order 1", "Order 2", "Order 3"]
@@ -96,47 +96,8 @@ for data in central_allocation:
     filtered_data = [item for item in data if item != 'RULES (BOC)']
     filtered_central_allocations.append(filtered_data)
 
-print(filtered_central_allocations)
+# print(filtered_central_allocations)
 
+# Indicate that the file path is correctly set
+print("Data successfully read from the specified Excel file.")
 
-
-# # Print the separated data for worker preferences and central_allocation
-# print("Worker Preferences for All Orders:")
-# for data in central_allocation:
-#     print(data)
-
-
-# print("Duplicated Preferences for All Orders:")
-# # Duplicate and add duplicates behind their original lists
-# for i in range(len(worker_pref_data)):
-#     if i == 0:
-#         for _ in range(n[0]-1):
-#             worker_pref_data.insert(1, worker_pref_data[i])
-#             resilience_data.insert(1, worker_pref_data[i])
-#         print(worker_pref_data)
-#
-#     elif i == 1:
-#         x = n[0]
-#         y = n[0] + 1
-#         print(y)
-#         for _ in range(n[1]-1):
-#             worker_pref_data.insert(x, worker_pref_data[y])
-#             resilience_data.insert(x, worker_pref_data[y])
-#     # else:
-#     #     worker_pref_data.extend([worker_pref_data[i]] * n[2])
-#     #     resilience_data.extend([resilience_data[i]] * n[2])
-#
-# # print(worker_pref_data)
-
-# # Print the separated data for worker preferences and resilience
-# print("Worker Preferences for All Orders:")
-# for data in worker_pref_data:
-#     print(data)
-#
-# # print("Resilience Data for All Orders:")
-# # for data in resilience_data:
-# #     print(data)
-#
-# # print(worker_pref_data)
-# # print(resilience_data)
-#

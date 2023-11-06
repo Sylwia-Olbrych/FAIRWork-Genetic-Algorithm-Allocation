@@ -1,9 +1,7 @@
-from genetic_algorithm import initialization, calc_score, selection, crossover, elitistUpdate, mutation, find_best_chromosome
+from genetic_algorithm import calc_score
 import read_data
-import random
-import matplotlib.pyplot as plt
 import time
-import itertools
+
 # Access the data from read_data.py
 worker_preferences = read_data.worker_pref_data
 central_allocation = read_data.filtered_central_allocations

@@ -12,26 +12,24 @@ start_time = time.time()
 worker_preferences = read_data.worker_pref_data
 central_allocation = read_data.filtered_central_allocations
 
+# Weight for central allocation and worker preference scores
 weight_central = 0.6
 weight_worker = 0.4
 
-print("Worker Preferences:")
-print(worker_preferences)
+# print("Worker Preferences:")
+# print(worker_preferences)
+#
+# print("Central Allocation:")
+# print(central_allocation)
 
-print("Central Allocation:")
-print(central_allocation)
-
-
-# read required number of stevedores from excel sheet
+# read required number of stevedores from Excel sheet
 required_stevedores = read_data.n
 num_machines = sum(required_stevedores)
 
-# print(worker_preferences)
-# print(resilience_data)
 # Number of population
 Npop = 200
 
-# number of machines (chromosomes)
+# Number of machines (chromosomes)
 n = num_machines
 # Probability of crossover
 Pc = 0.5
@@ -41,9 +39,14 @@ Pm = 0.2
 stopGeneration = 50
 
 # Creating the initial population
-# 20 workers
-population = initialization(Npop, n, 20)
-print(population)
+
+# Number of Workers
+nu_workers = 20
+
+# Initialize the population
+population = initialization(Npop, n, nu_workers)
+# print(population)
+
 gen_stats = []  # Initialize empty list for generation statistics
 
 for i in range(stopGeneration):
@@ -55,7 +58,7 @@ for i in range(stopGeneration):
     for p in parents:
         r = random.random()
         n = len(population[p[0]])
-        # print([population[p[0]], population[p[1]]])
+
         if r < Pc:
             childs.append(crossover([population[p[0]], population[p[1]]], n))
         else:
@@ -82,18 +85,14 @@ for i in range(stopGeneration):
         'best_score': max(scores)
     })
 
-    # print(f"Generation: {i+1}")
-    # print("Chromosomes:")
-    # for j, chromosome in enumerate(population):
-    #    print(f"Chromosome {j+1}: {chromosome} (score: {scores[j]})")
-    # print(f"Average score: {avg_score}\n")
+
 # Record the end time
 end_time = time.time()
 
 # Calculate the elapsed time
 elapsed_time = end_time - start_time
 
-
+#Find the best solution and best score
 best_solution, best_score = find_best_chromosome(population, central_allocation, worker_preferences, weight_central, weight_worker)
 print(f"Best solution:{best_solution}")
 print(f"Total score: {best_score}")
@@ -114,8 +113,8 @@ def print_best_worker_assignments(best_solution, required_stevedores):
 
 print_best_worker_assignments(best_solution, required_stevedores)
 
-
-
+best_solution_type = type(best_solution)
+print(f"Type of best_solution: {best_solution_type}")
 
 # Print the elapsed time
 print(f"Execution time: {elapsed_time} seconds")

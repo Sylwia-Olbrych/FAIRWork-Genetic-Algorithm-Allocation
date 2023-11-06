@@ -18,10 +18,13 @@ def initialization(Npop, n, n_workers):
 def calc_score(chromosome, data1, data2, weight1, weight2):
     #data1 : machine pref/central allocation
     #data2 : worker preference
+
+    # Calculate score of worker to order combination by accessing the score in data
     data1 = np.array(data1)
     data2 = np.array(data2)
     result1 = np.zeros(len(chromosome))
     result2 = np.zeros(len(chromosome))
+    # Save relevant worker preference and central allocation score for the combination
     for i, idx in enumerate(chromosome):
         if idx < len(data1[i]):
             result1[i] = data1[i][idx]
@@ -30,31 +33,11 @@ def calc_score(chromosome, data1, data2, weight1, weight2):
     sum_output1 = np.sum(result1)
     sum_output2 = np.sum(result2)
 
-    # print(result1)
-    # print("Sum of Machine Pref:", sum_output1)  # Sum of output1
-    # print(result2)
-    # print("Sum of Worker Pref:", sum_output2)  # Sum of output2
-    # Print the intermediate results for debugging
-
-    # print("Result1:")
-    # print(result1)
-    # print("Result2:")
-    # print(result2)
+    # Sum of worker preference and central allocation score with weight of each score
     total_score = weight1*sum_output1 + weight2*sum_output2
 
     return total_score
-# # Sample data and weights
-# chromosome = [1, 2, 0]  # Sample chromosome
-# data1 = [[10, 20, 30], [5, 15, 25], [8, 18, 28]]  # Sample data1 (machine pref/central allocation)
-# data2 = [[5, 10, 15], [3, 8, 13], [4, 9, 14]]  # Sample data2 (worker preference)
-# weight1 = 2  # Weight for sum_output1
-# weight2 = 1  # Weight for sum_output2
-#
-# # Call the calc_score function with the sample data and weights
-# score = calc_score(chromosome, data2, data1, weight2, weight1)
-#
-# # Print the result
-# print("Total Score:", score)
+
 
 def selection(pop, machine_pref, worker_pref, weight1, weight2):
     popObj = []
@@ -107,17 +90,6 @@ def crossover(parents, n):
 
     return child
 
-#
-# # Test the crossover function
-# parent1 = [1, 2, 8]
-# parent2 = [5, 4, 3]
-# n = len(parent1)
-#
-# child = crossover([parent1, parent2], n)
-#
-# print("Parent 1:", parent1)
-# print("Parent 2:", parent2)
-# print("Child:", child)
 
 def elitistUpdate(old_pop, new_pop, worker_preferences, machine_preferences, weight1, weight2):
     # Calculate fitness scores for all individuals in the population

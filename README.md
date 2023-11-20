@@ -17,17 +17,15 @@ This Python code implements a genetic algorithm for resource allocation, focusin
 
 - `read_data.py`: This file reads input data from an Excel file and extracts worker preferences and machine preferences for different orders. You can adjust the Excel file path, sheet names, and column ranges to suit your specific data structure.
 
-- `validation.py`: This file generates and evaluates permutations for all possible worker-to-order combinations. It calculates scores for each permutation and identifies the one with the highest score as the best worker-to-order combination. The execution time is also measured, and the resulting output is then compared to the genetic algorithm's results.
+- `validation.py`: This file serves as a validation tool to ensure the effectiveness of the genetic algorithm by providing the execution time if all the scores of possible worker-to-order combinations are calculated. It generates and evaluates permutations for all possible worker-to-order combinations. It calculates scores for each permutation and identifies the one with the highest score as the best worker-to-order combination. The execution time is also measured, and the resulting output is then compared to the genetic algorithm's results. *Note that the computation time could take a very long time to run this if the number of permutations gets too large because of the factorial growth of possibilities, resulting in an exponential increase in the time complexity. 
+
+- `main.py`: This file is the main script that executes the algorithm. Defines parameters such as population size, crossover and mutation probabilities, and stopping criteria. Utilizes the genetic algorithm functions for resource allocation and displays results, including a graphical representation of score evolution over generations.
 
 ## Usage
 
-1. Ensure you have Python 3.x installed.
+1. Ensure you have Python 3.11 installed.
 
-2. Make sure to have the required libraries, such as NumPy and Pandas, installed. You can use the following command to install NumPy:
-
-   ```bash
-   pip install numpy
-   ```
+2. Make sure to have the required libraries, such as matplotlib, NumPy and Pandas, installed. The required libraries are specified in the `requirements.txt` file.
 
 3. Modify the data source in `read_data.py` by providing the path to your Excel file and adjusting the data reading settings to match your dataset. You should provide the following information:
 

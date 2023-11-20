@@ -3,14 +3,18 @@ import read_data
 import random
 import matplotlib.pyplot as plt
 import time
-
+import dummy_data
 # Record the start time
 start_time = time.time()
 
 
-# Access the data from read_data.py
-worker_preferences = read_data.worker_pref_data
-central_allocation = read_data.filtered_central_allocations
+# Access the data from read_data.py ( Uncomment if you want to read your own data from read_data.py file )
+# worker_preferences = read_data.worker_pref_data
+# central_allocation = read_data.filtered_central_allocations
+
+# Access dummy data from dummy_data.py
+worker_preferences = dummy_data.worker_preferences_randomized
+central_allocation = dummy_data.central_allocation_randomized
 
 # Weight for central allocation and worker preference scores
 weight_central = 0.6

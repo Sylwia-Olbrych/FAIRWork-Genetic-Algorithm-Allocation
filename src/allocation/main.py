@@ -13,8 +13,8 @@ start_time = time.time()
 # central_allocation = read_data.filtered_central_allocations
 
 # Access dummy data from dummy_data.py
-worker_preferences = dummy_data.worker_preferences_randomized
-central_allocation = dummy_data.central_allocation_randomized
+worker_preferences = dummy_data.worker_preferences
+central_allocation = dummy_data.central_allocation
 
 # Weight for central allocation and worker preference scores
 weight_central = 0.6
@@ -27,7 +27,10 @@ weight_worker = 0.4
 # print(central_allocation)
 
 # read required number of stevedores from Excel sheet
-required_stevedores = read_data.n
+# required_stevedores = read_data.n
+# print(required_stevedores)
+required_stevedores = dummy_data.required_stevedores
+
 num_machines = sum(required_stevedores)
 
 # Number of population

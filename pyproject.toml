@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=42.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "--cov=allocation"
+testpaths = [
+    "tests",
+]
+
+[tool.mypy]
+mypy_path = "src"
+check_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+no_implicit_optional = true
+show_error_codes = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+no_implicit_reexport = true#[build-system]
+#requires = ["setuptools>=65.5.0", "wheel"]
+#build-backend = "setuptools.build_meta"
+#
+#[project]
+#name = "FAIRWork-Genetic-Algorithm-Allocation"
+#version = "0.1.0"
+#description = "genetic Algorithm for Worker Allocation."
+#authors = [
+#    { name = "Sylwia Olbrych", email = "sylwia.olbrych@ima.rwth-aachen.de" },
+#]
+#license = { file = "LICENSE" }
+#classifiers = [
+#    "License :: OSI Approved :: MIT License",
+#    "Programming Language :: Python",
+#    "Programming Language :: Python :: 3",
+#]
+#
+#dependencies = [
+#    "matplotlib",
+#    "numpy"
+#]
+#
+#requires-python = ">=3.9"
+#
+#[project.optional-dependencies]
+#dev = [
+#    "black",
+#    "bumpver",
+#    "isort",
+#    "pip-tools",
+#    "pytest",
+#    "pytest-cov",
+#    "mypy",
+#    "flake8",
+#]
+#
+#[tool.pytest.ini_options]
+#addopts = "--cov=allocation"
+#testpaths = ["tests",]
+#
+#[tool.mypy]
+#mypy_path = "src"
+#check_untyped_defs = true
+#disallow_any_generics = true
+#ignore_missing_imports = true
+#no_implicit_optional = true
+#show_error_codes = true
+#strict_equality = true
+#warn_redundant_casts = true
+#warn_return_any = true
+#warn_unreachable = true
+#warn_unused_configs = true
+#no_implicit_reexport = true
+#
+##[tool.bumpver.file_patterns]
+##"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+##"setup.py" = ["{version}", "{pep440_version}"]
+##"README.md" = ["{version}", "{pep440_version}"]

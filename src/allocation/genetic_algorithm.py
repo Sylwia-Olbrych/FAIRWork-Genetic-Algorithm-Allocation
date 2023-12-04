@@ -103,6 +103,10 @@ def elitistUpdate(old_pop, new_pop, worker_preferences, machine_preferences, wei
     worst_idx = min(range(len(new_scores)), key=lambda i: new_scores[i])
     new_pop[worst_idx] = old_pop[best_idx]
 
+    # worst_idx = min(range(len(new_scores)), key=lambda i: new_scores[i])
+    # print(f"Worst Index: {worst_idx}, New Population Length: {len(new_pop)}")
+    # new_pop[worst_idx] = old_pop[best_idx]
+
     return new_pop
 
 
@@ -126,5 +130,8 @@ def find_best_chromosome(population, machine_pref, worker_pref, weight1, weight2
             best_score = score
 
     return best_chromosome, best_score
+
+
+
 
 

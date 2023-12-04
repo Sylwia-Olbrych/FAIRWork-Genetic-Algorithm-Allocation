@@ -2,7 +2,7 @@ import pandas as pd
 
 # Define the path to your Excel file
 #TODO: Add path to your Excel File
-excel_file = "/Users/melodytung/PycharmProjects/FAIRWork-Genetic-Algorithm-Allocation/src/Workerload Balance Demonstrator Excel_fixed values_static_v4.xlsx"
+excel_file = "Workerload Balance Demonstrator Excel_fixed values_static_v4.xlsx"
 
 # Define the sheet name for "Order details KB"
 sheet_name_order_details = "Order details KB"
@@ -97,7 +97,9 @@ for data in central_allocation:
     filtered_central_allocations.append(filtered_data)
 
 # print(filtered_central_allocations)
+central_allocation = filtered_central_allocations
+worker_preferences = worker_pref_data
 
 # Indicate that the file path is correctly set
 print("Data successfully read from the specified Excel file.")
-
+print(required_stevedores)

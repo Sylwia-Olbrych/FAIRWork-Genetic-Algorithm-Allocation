@@ -1,16 +1,17 @@
 from genetic_algorithm import calc_score
 import read_data
+import dummy_data
 import time
 
 # Access the data from read_data.py
-worker_preferences = read_data.worker_pref_data
-central_allocation = read_data.filtered_central_allocations
+worker_preferences = dummy_data.worker_preferences
+central_allocation = dummy_data.central_allocation
 
 weight_central = 0.6
 weight_worker = 0.4
 
 # read required number of stevedores from excel sheet
-required_stevedores = read_data.n
+required_stevedores = dummy_data.required_stevedores
 print(required_stevedores)
 num_machines = sum(required_stevedores)
 

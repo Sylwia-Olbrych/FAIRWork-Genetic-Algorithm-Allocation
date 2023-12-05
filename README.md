@@ -1,5 +1,5 @@
 # Resource Allocation - Genetic Algorithm
-Developers: [Zi Xuan(Melody) Tung](https://github.com/melody-tung), [Alexander Nasuta](https://github.com/Alexander-Nasuta)
+Developers: [Zi Xuan(Melody) Tung](https://github.com/melody-tung), [Alexander Nasuta](https://github.com/Alexander-Nasuta),
  Sylwia Olbrych
 
 ## About the project

@@ -44,7 +44,7 @@ for sheet_name in sheet_names:
     worker_data = pd.read_excel(excel_file, sheet_name=sheet_name, usecols=worker_columns,
                                 skiprows=range(1, start_rows[sheet_names.index(sheet_name)]))
 
-    # Read resilience data from the Excel sheet
+    # Read central data from the Excel sheet
     central_data = pd.read_excel(excel_file, sheet_name=sheet_name, usecols=central_allocation_columns,
                                skiprows=range(1, start_rows[sheet_names.index(sheet_name)]))
 

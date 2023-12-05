@@ -1,15 +1,9 @@
+# Resource Allocation - Genetic Algorithm
 Developers: [Zi Xuan(Melody) Tung](https://github.com/melody-tung), [Alexander Nasuta](https://github.com/Alexander-Nasuta)
  Sylwia Olbrych
 
-“This work has been supported by the FAIRWork project (www.fairwork-project.eu) and has been funded within the European Commission’s Horizon Europe Programme under contract number 101049499. This paper expresses the opinions of the authors and not necessarily those of the European Commission. The European Commission is not liable for any use that may be made of the information contained in this presentation.”
-
-This project provides genetic algorithm to calculate the best worker to order combination by considering worker preference and central allocation of workers. 
-
-
-***
-# Resource Allocation - Genetic Algorithm
-
-This Python code implements a genetic algorithm for resource allocation, focusing on worker-order assignments based on worker preferences and central allocation. The code is designed to find an optimal assignment that maximizes a score, which can represent efficiency, cost-effectiveness, or other relevant factors.
+## About the project
+This project implements a genetic algorithm for resource allocation, focusing on worker-order assignments based on worker preferences and central allocation. The code is designed to find an optimal assignment that maximizes a score, which can represent efficiency, cost-effectiveness, or other relevant factors.
 
 ## Key Components
 - `dummy_data.py`: This file generates dummy data in place of real data that can be input into the algorithm. 

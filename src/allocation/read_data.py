@@ -87,8 +87,6 @@ for i, count in enumerate(n):
             central_allocation.append(central_allocation3)
 
 
-# Print the separated data for worker preferences and central_allocation
-# print("Worker Preferences for All Orders:")
 filtered_central_allocations = []
 
 for data in central_allocation:
@@ -96,10 +94,9 @@ for data in central_allocation:
     filtered_data = [item for item in data if item != 'RULES (BOC)']
     filtered_central_allocations.append(filtered_data)
 
-# print(filtered_central_allocations)
 central_allocation = filtered_central_allocations
 worker_preferences = worker_pref_data
 
 # Indicate that the file path is correctly set
-print("Data successfully read from the specified Excel file.")
-print(required_stevedores)
+# print("Data successfully read from the specified Excel file.")
+

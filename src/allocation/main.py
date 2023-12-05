@@ -20,15 +20,6 @@ central_allocation = dummy_data.central_allocation
 weight_central = 0.6
 weight_worker = 0.4
 
-# print("Worker Preferences:")
-# print(worker_preferences)
-#
-# print("Central Allocation:")
-# print(central_allocation)
-
-# read required number of stevedores from Excel sheet
-# required_stevedores = read_data.n
-# print(required_stevedores)
 required_stevedores = dummy_data.required_stevedores
 
 num_machines = sum(required_stevedores)
@@ -45,14 +36,11 @@ Pm = 0.2
 # Stopping number for generation
 stopGeneration = 50
 
-# Creating the initial population
-
 # Number of Workers
 nu_workers = 20
 
 # Initialize the population
 population = initialization(Npop, n, nu_workers)
-# print(population)
 
 gen_stats = []  # Initialize empty list for generation statistics
 
